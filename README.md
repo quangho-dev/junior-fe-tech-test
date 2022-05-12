@@ -28,3 +28,7 @@ Hi! Welcome to the Skedulo frontend tech project. You will find the details for 
 Once you have completed the exercise it would be great to see a readme that contains some of your thinking while working through the test, constraints you worked within, some decisions and compromises you needed to make, and anything else you think would be interesting for the reviewers to know.
 
 Good luck! And if you have any questions, don't hesitate to contact your hiring manager.
+
+## My notes:
+
+- Because I can't find the data of contacts, so I can't fetch contact's name by contact ID.
