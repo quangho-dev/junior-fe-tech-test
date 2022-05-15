@@ -1,9 +1,10 @@
 import React, { useState } from "react"
-import { IDataService, DateFormatOption } from '../common/types'
+import { IDataService } from '../common/types'
 
 import { SectionGroup } from "../components/section/SectionGroup"
 
 import "./QuestionOne.css"
+import { JobItem } from "./jobItem/JobItem"
 
 export const QuestionOne: React.FC<{ service: IDataService }> = ({ service }) => {
   const [isSearchFieldValid, setIsSearchFieldValid] = useState<boolean>(false);
@@ -37,8 +38,6 @@ export const QuestionOne: React.FC<{ service: IDataService }> = ({ service }) =>
     setIsSearchFieldTouched(true);
   }
 
-  const dateFormatOption: DateFormatOption = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-
   return (
     <SectionGroup>
       <form className='search-form'>
@@ -54,12 +53,7 @@ export const QuestionOne: React.FC<{ service: IDataService }> = ({ service }) =>
       <div className="job-list">
         <h3>List of jobs:</h3>
 
-        {jobs.length > 0 && jobs.map((job) => <div className='job-info'>
-          <p><span className='bold-text'>Job's name: </span>{job.name}</p>
-          <p><span className='bold-text'>Start date: </span>{new Date(job.start).toLocaleString("en-US", dateFormatOption)}</p>
-          <p><span className='bold-text'>End date: </span>{new Date(job.end).toLocaleString("en-US", dateFormatOption)}</p>
-          <p><span className='bold-text'>Contact ID: </span>{job.contactId}</p>
-        </div>)}
+        {jobs.length > 0 && jobs.map((job, index) => <JobItem job={job} key={index} />)}
 
         {(searchTerm && jobs.length === 0) && <p className='error-message'>Sorry, there aren't any jobs that have the name: "{searchTerm}"</p>}
       </div>

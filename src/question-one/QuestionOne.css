@@ -19,20 +19,6 @@
   padding: 10px;
 }
 
-.job-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2em;
-}
-
-.job-info {
-  border: 3px solid rgb(119, 119, 119);
-  padding: 1em;
-  margin-bottom: 1em;
-}
-
 .bold-text {
   font-weight: 600;
 }
